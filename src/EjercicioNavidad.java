@@ -48,7 +48,7 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class EjercicioNavidad {
-    public static final int MIN_OPCION = 0, MAX_OPCION = 3;
+    public static final int MIN_OPCION = 1, MAX_OPCION = 3, MAX_OPCION2 = 4;
     public static void main(String[] args) {
         Random numeroAleatorio = new Random();
         Scanner scanner = new Scanner(System.in);
@@ -59,10 +59,9 @@ public class EjercicioNavidad {
         int[] energiaSalas = new int[4];
         for (int i = 0; i < energiaSalas.length; i++) {
             energiaSalas[i] = (int) (Math.random() * 41) - 20;
-            System.out.println(energiaSalas[i]);
         }
         System.out.println("\t*** Bienvenido al Laberinto ***");
-        System.out.println("Las reglas son: llegar a la Sala 3 con 30 o mas de energia.\nEn caso de agotar toda la energia o rendirte, habras perdido. \nEmpecemos!");
+        System.out.println("Las reglas son: llegar a la Sala 3 con al menos 30 de energia.\nEn caso de agotar toda la energia o rendirte, habras perdido. \nLas salas tienen energias aleatorias, cuidado! Porque te pueden favorecer o mermar... \nEmpecemos!");
         while(juegoActivo) {
             energia += energiaSalas[posicionActual - 1];
             System.out.println("Te Encuentras en la Sala " + posicionActual + " con " + energia + " puntos de energia");
@@ -76,7 +75,7 @@ public class EjercicioNavidad {
             if(juegoActivo) {
                 System.out.println("Que deseas hacer?: \n  (1) Moverse de Sala \n  (2) Inspeccionar Sala actual \n  (3) Revelar energia de las Salas \n  (4) Salir del juego");
                 while(opcionUsuario < 1 || opcionUsuario > 4) {
-                System.out.print("Introduce valor numerico (1-4): ");
+                System.out.print("Introduce valor numerico ("+MIN_OPCION+" - "+MAX_OPCION2+"): ");
                         if (scanner.hasNextInt()) {
                             opcionUsuario = scanner.nextInt();
                             if (opcionUsuario < 1 || opcionUsuario > 4) {
@@ -100,7 +99,7 @@ public class EjercicioNavidad {
                                     direccionUsuario = scanner.nextInt();
                                     if (direccionUsuario < 1 || direccionUsuario > 3){
                                         System.out.println("Opcion Incorrecta");
-                                        System.out.println("Introduce valor numerico (1-3): ");
+                                        System.out.println("Introduce valor numerico ("+MIN_OPCION+" - "+MAX_OPCION+"): ");
                                         scanner.nextLine();
                                     }
                                 } else {
