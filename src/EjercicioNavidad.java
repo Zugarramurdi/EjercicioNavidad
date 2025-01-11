@@ -83,11 +83,10 @@ public class EjercicioNavidad {
                             }
 
                         } else {
-                            scanner.nextLine();
+                            scanner.next();
                             System.out.println("Dato no valido, tiene que ser numerico");
 
                         }
-                        scanner.nextLine();
                 }
                     switch (opcionUsuario) {
                         case 1:
@@ -102,7 +101,7 @@ public class EjercicioNavidad {
                                         scanner.nextLine();
                                     }
                                 } else {
-                                    scanner.next();
+                                    scanner.nextLine();
                                     System.out.println("Dato no valido, tiene que ser numerico");
                                 }
                             }
