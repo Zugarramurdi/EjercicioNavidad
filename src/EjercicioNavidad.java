@@ -63,7 +63,6 @@ public class EjercicioNavidad {
         System.out.println("\t*** Bienvenido al Laberinto ***");
         System.out.println("Las reglas son: llegar a la Sala 3 con al menos 30 de energia.\nEn caso de agotar toda la energia o rendirte, habras perdido. \nLas salas tienen energias aleatorias, cuidado! Porque te pueden favorecer o mermar... \nEmpecemos!");
         while(juegoActivo) {
-            energia += energiaSalas[posicionActual - 1];
             System.out.println("Te Encuentras en la Sala " + posicionActual + " con " + energia + " puntos de energia");
             if (posicionActual == 3 && energia >=30){
                 System.out.println("Has llegado a la Sala 3 con la suficiente energia. \n\t *** HAS GANADO! ***");
@@ -119,6 +118,7 @@ public class EjercicioNavidad {
                                     } else {
                                         posicionActual = 2;
                                     }
+                                    energia += energiaSalas[posicionActual - 1];
                                     scanner.nextLine();
                                     break;
                                 case 2:
@@ -131,6 +131,7 @@ public class EjercicioNavidad {
                                     } else {
                                         posicionActual = 4;
                                     }
+                                    energia += energiaSalas[posicionActual - 1];
                                     scanner.nextLine();
                                     break;
                                 case 3:
@@ -147,7 +148,6 @@ public class EjercicioNavidad {
                         case 2:
                             eventoAleatorio = numeroAleatorio.nextDouble(1);
                             opcionesAleatorias = numeroAleatorio.nextInt(3) + 1;
-                            scanner.nextLine();
                             System.out.println("Inspeccionando Sala...");
                             if (eventoAleatorio < (1.0 / 3.0)) {
                                 switch (opcionesAleatorias) {
