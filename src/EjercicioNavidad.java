@@ -178,8 +178,11 @@ public class EjercicioNavidad {
                             }
                             break;
                         case 3:
+
                             System.out.println("Se han generado las siguientes energias: ");
-                            System.out.println("Sala 1: "+energiaSalas[0]+"\nSala 2: "+energiaSalas[1]+"\nSala 3: "+energiaSalas[2]+"\nSala 4: "+energiaSalas[3]);
+                            for (int i=0; i<energiaSalas.length;i++){
+                                System.out.println("Sala "+(i+1)+": "+energiaSalas[i]);
+                            }
                             break;
                         case 4:
                             System.out.println("Cerrando el juego... \n Nos vemos en la siguiente \n\t Gracias por jugar!");
